@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Engine Sound Classification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<div>Engine Sound Classification</div>
+			<div><img src="logo.jpg"/></div>
+		</h1>
+	</div>
+	<div class="soundwave">
+		<div>
+		<img src="spectro2.gif" width="500" height="200">
+		</div>
+	</div>
+	<div class="container">
+		<div class="droparea">Drop Here</div>
+
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+	<script src="app.js">
+	</script>
+	<div class="submit">
+		<form action = "http://localhost:5000/result" method = "POST">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<br>
+	<footer>
+		&copy; PwC Prototype
+	</footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Engine Sound Classification</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<div>Engine Sound Classification</div>
+			<div><img src="{{ url_for('static', filename='logo.jpg') }}"/></div>
+		</h1>
+	</div>
+	<div class="soundwave">
+		<div>
+		<img src="{{ url_for('static', filename='spectro2_frame.png') }}" width="500" height="200">
+		</div>
+	</div>
+
+	<div class="result">{{result}}</div>
+	<div class="submit">
+		<form action = "http://localhost:5000/return_home" method = "POST">
+			<input type="submit" value="Home">
+		</form>
+	</div>
+	<br>
+	<footer class="footer">
+		&copy; PwC Prototype
+	</footer>
+</body>
+</html>
