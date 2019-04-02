@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, jsonify, render_template
+from flask import Flask, request, redirect, jsonify, render_template, url_for
 import os
 import pickle
 from werkzeug.utils import secure_filename
@@ -13,7 +13,8 @@ model = pickle.load(open('model.pickle','rb'))
 
 @app.route("/")
 def index():
-    return redirect("/static/index.html")
+	return render_template('index.html')
+    # return redirect("/static/index.html")
 
 @app.route("/sendfile", methods=["POST"])
 def send_file():
@@ -47,11 +48,12 @@ def get_filenames():
     return jsonify(return_dict)
 	
 @app.route("/result", methods=['POST'])
-def score():
+def result():
 	input_file_path = "uploads/" + os.listdir("uploads")[0]
 	predictors = parse_predictors(input_file_path)
 	prediction = model.predict_proba(predictors)
 	output = round(prediction[0][0][0], 4)
+	# return redirect(url_for('result.html', result=output))
 	return render_template('result.html', result = output)
 
 @app.route("/return_home", methods=['POST'])
